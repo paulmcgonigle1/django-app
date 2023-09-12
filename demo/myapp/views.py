@@ -23,7 +23,7 @@ def todos(request):
     return render(request, "todos.html", {"todos": items})
 
 
-class ProcessPDFs(View):
+class Process(View):
     @csrf_exempt
     def post(self, request):
         session_id = str(uuid.uuid4())
@@ -31,7 +31,7 @@ class ProcessPDFs(View):
         return JsonResponse({"session_id": session_id}, status=200)
 
 
-class Converse(View):
+class ReturnDummy(View):
     @csrf_exempt
     def post(self, request):
         # Returning a dummy answer for testing
